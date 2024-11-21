@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="styles/style.css">
+	<link rel="stylesheet" href="styles/header.css">
+	<link rel="stylesheet" href="styles/home.css">
+	<link rel="stylesheet" href="styles/about.css">
+	<link rel="stylesheet" href="styles/slide.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap-grid.min.css" integrity="sha512-i1b/nzkVo97VN5WbEtaPebBG8REvjWeqNclJ6AItj7msdVcaveKrlIIByDpvjk5nwHjXkIqGZscVxOrTb9tsMA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<title>Paradise</title>
+</head>
+<body>
+	<header>
+		<nav id="navbar">
+			<img class="logo" src="imagens/LOGO.png" alt="">
+			<ul id="nav_list">
+				<li class="nav-item active">
+					<a href="#home">Home</a>
+				</li>
+				<li class="nav-item">
+					<a href="#about">Sobre o Jogo</a>
+				</li>
+				<li class="nav-item">
+					<a href="#quemsomos">Equipe</a>
+				</li>
+			</ul>
+
+			<button id="mobile_btn">
+				<i class="fa-solid fa-bars"></i>
+			</button>
+		</nav>
+
+		<div id="mobile_menu">
+			<ul id="mobile_nav_list">
+				<li class="nav-item">
+					<a href="#home">Home</a>
+				</li>
+				<li class="nav-item">
+					<a href="#nome">Sobre o Jogo</a>
+				</li>
+				<li class="nav-item">
+					<a href="#nome">Equipe</a>
+				</li>
+			</ul>
+		</div>
+	</header>
+
+	<main id="content">
+		<section id="home">
+			<div id="cta">
+				<h1 class="title">DESVENDE O <span>MISTÉRIO</span>
+				</h1>
+				<P class="description">
+					Em um jogo de realidade virtual onde pessoas vivem uma segunda vida, 
+					um crime ocorre, Eva, a criadora, é assassinada. 
+					Agora, os jogadores precisam encontrar o culpado para vencer.
+				</P>
+			</div>
+
+			<div id="banner">
+				<img src="imagens/CAIXA.png"alt="">
+			</div>
+		</section>
+		
+		<section id="about">
+			<h2>Sobre o Jogo</h2>
+			<h3>História</h3>
+			<p class="description2">Em um jogo de realidade virtual em que pessoas se refugiam e vivem uma segunda vida, 
+			um crime é cometido, um assassino desconhecido matou Eva, criadora e participante desse mundo. 
+			Os jogadores deverão descobrir quem foi o culpado para vencer o jogo</p>
+			
+			<h3>Regras</h3>
+			<h5>PARA 3 A 8 JOGADORES A PARTIR DE 8 ANOS DE IDADE</h5>
+			<p class="description2">No jogo Paradise, os jogadores investigam um assassinato para descobrir o culpado, 
+				a arma e o local do crime. 
+				No início, cartas com essas informações são sorteadas e colocadas secretamente em um envelope.
+			<br>Os jogadores percorrem o tabuleiro, fazem suspeitas e mostram cartas para eliminar possibilidades. 
+			Vence quem deduz corretamente e revela a solução do caso.</p>
+
+			<div>
+				<h3>Personagens</h3>
+			</div>
+			<div class="wrapper"> 
+				<i id="left" class="fa-solid fa-angle-left"></i>
+				<div class="carousel">
+					<img src="imagens/CARTA20.png" alt="img" draggable="false">
+					<img src="imagens/CARTA21.png" alt="img" draggable="false">
+					<img src="imagens/CARTA22.png" alt="img" draggable="false">
+					<img src="imagens/CARTA23.png" alt="img" draggable="false">
+					<img src="imagens/CARTA24.png" alt="img" draggable="false">
+					<img src="imagens/CARTA25.png" alt="img" draggable="false">
+					<img src="imagens/CARTA26.png" alt="img" draggable="false">
+					<img src="imagens/CARTA27.png" alt="img" draggable="false">
+				</div>
+				<i id="right" class="fa-solid fa-angle-right"></i>
+			</div>
+		
+		</section>
+	</main>
+	<script defer src="script.js"></script>
+</body>
+</html>

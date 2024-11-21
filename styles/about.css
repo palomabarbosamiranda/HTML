@@ -1,0 +1,36 @@
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+
+#about h2 {
+    color: #00FF00;
+}
+
+h3 {
+    color: #ffffff;
+}
+
+h5 {
+    color: #00FF00;
+}
+
+.description2 {
+    color: #ffffff;
+    width: 68%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+}
+
+div h3 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-bottom: 30px;
+    text-decoration: overline;
+}
