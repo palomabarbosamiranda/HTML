@@ -20,10 +20,14 @@
 .wrapper i:first-child{
     left: -23px;
     display: none;
+    -webkit-tap-highlight-color: transparent;
+
 }
 
 .wrapper i:last-child{
     right: -23px;
+    -webkit-tap-highlight-color: transparent;
+
 }
 
 .wrapper .carousel {
@@ -41,6 +45,7 @@
 
 .carousel.carousel img {
     pointer-events: none;
+
 }
 
 .carousel img {
