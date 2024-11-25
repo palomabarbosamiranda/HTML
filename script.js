@@ -17,8 +17,10 @@ carousels.forEach(carousel => {
     // Função para exibir/ocultar as setas conforme o scroll do carrossel
     const showHideIcons = () => {
         let scrollWidth = carousel.scrollWidth - carousel.clientWidth;
-        leftArrow.style.display = carousel.scrollLeft == 0 ? "none" : "block";
-        rightArrow.style.display = carousel.scrollLeft == scrollWidth ? "none" : "block";
+        // Se o carrossel estiver no início, esconder a seta esquerda
+        leftArrow.style.display = carousel.scrollLeft === 0 ? "none" : "block";
+        // Se o carrossel estiver no final, esconder a seta direita
+        rightArrow.style.display = carousel.scrollLeft === scrollWidth ? "none" : "block";
     };
 
     // Função para mover o carrossel com base na direção (esquerda ou direita)
