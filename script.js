@@ -5,73 +5,116 @@ $(document).ready(function() {
     });
 });
 
-const carousel = document.querySelector(".carousel"),
-firstImg = carousel.querySelectorAll("img")[0],
-arrowIcons = document.querySelectorAll(".wrapper i");
+const carousels = document.querySelectorAll(".carousel");
 
-let isDragStart = false, isDragging = false, prevPageX, prevScrollLeft, positionDiff;
+carousels.forEach(carousel => {
+    const leftArrow = carousel.parentElement.querySelector("#left");
+    const rightArrow = carousel.parentElement.querySelector("#right");
+    const firstImg = carousel.querySelector("img");
 
+    let isDragStart = false, isDragging = false, prevPageX, prevScrollLeft, positionDiff;
 
+    // Função para exibir/ocultar as setas conforme o scroll do carrossel
+    const showHideIcons = () => {
+        let scrollWidth = carousel.scrollWidth - carousel.clientWidth;
+        leftArrow.style.display = carousel.scrollLeft == 0 ? "none" : "block";
+        rightArrow.style.display = carousel.scrollLeft == scrollWidth ? "none" : "block";
+    };
 
-const showHideIcons = () => {
-    let scrollWidth = carousel.scrollWidth - carousel.clientWidth;
-    arrowIcons[0].style.display = carousel.scrollLeft == 0 ? "none" : "block";
-    arrowIcons[1].style.display = carousel.scrollLeft == scrollWidth ? "none" : "block";
-}
+    // Função para mover o carrossel com base na direção (esquerda ou direita)
+    const moveCarousel = (direction) => {
+        let firstImgWidth = firstImg.clientWidth + 14; // Largura da imagem com o espaçamento
+        let visibleImgs = Math.floor(carousel.clientWidth / firstImgWidth); // Número de imagens visíveis no carrossel
+        let pageWidth = firstImgWidth * visibleImgs; // Largura de uma página (conjunto de imagens visíveis)
 
-arrowIcons.forEach(icon => {
-    icon.addEventListener("click", () => {
+        carousel.scrollLeft += direction === 'left' ? -pageWidth : pageWidth;
+        setTimeout(() => showHideIcons(), 60); // Atualiza as setas após o clique
+    };
+
+    // Eventos para as setas de navegação (Desktop e Mobile)
+    const arrowClickHandler = (e) => {
+        e.preventDefault(); // Impede qualquer comportamento padrão de rolagem
+        moveCarousel(e.target.id === "left" ? "left" : "right");
+    };
+
+    leftArrow.addEventListener("click", arrowClickHandler);
+    rightArrow.addEventListener("click", arrowClickHandler);
+
+    // Funções para manipular o drag (arraste)
+    const dragStart = (e) => {
+        isDragStart = true;
+        prevPageX = e.pageX || e.touches[0].pageX;
+        prevScrollLeft = carousel.scrollLeft;
+    };
+
+    const dragging = (e) => {
+        if (!isDragStart) return;
+        e.preventDefault();
+        isDragging = true;
+        carousel.classList.add("dragging");
+        positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
+        carousel.scrollLeft = prevScrollLeft - positionDiff;
+        showHideIcons();
+    };
+
+    const dragStop = () => {
+        isDragStart = false;
+        carousel.classList.remove("dragging");
+
+        if (!isDragging) return;
+        isDragging = false;
+        // Chama a função para ajustar o scroll após o arrasto
+        autoSlide();
+    };
+
+    // Função de auto-scroll após o arrasto
+    const autoSlide = () => {
+        positionDiff = Math.abs(positionDiff);
         let firstImgWidth = firstImg.clientWidth + 14;
-        carousel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
-        setTimeout(() => showHideIcons(), 60);
-    })
-});
+        let valDifference = firstImgWidth - positionDiff;
 
-const autoSlide = () => {
-    if(carousel.scrollLeft == (carousel.scrollWidth - carousel.clientWidth)) return;
+        if (carousel.scrollLeft > prevScrollLeft) {
+            return carousel.scrollLeft += positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+        }
+        carousel.scrollLeft -= positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+    };
 
-    positionDiff = Math.abs(positionDiff);
-    let firstImgWidth = firstImg.clientWidth + 14;
-    let valDifference = firstImgWidth - positionDiff;
+    // Função de arraste para dispositivos móveis e desktop
+    const startTouch = (e) => {
+        dragStart(e);
+    };
 
-    if (carousel.scrollLeft > prevScrollLeft) {
-        return carousel.scrollLeft += positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
-    }
-    carousel.scrollLeft -= positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
-}
+    const moveTouch = (e) => {
+        dragging(e);
+    };
 
+    const endTouch = () => {
+        dragStop();
+    };
 
-const dragStart = (e) => {
-    isDragStart = true;
-    prevPageX = e.pageX || e.touches[0].pageX;
-    prevScrollLeft = carousel.scrollLeft;
-}
+    // Eventos de arraste para desktop (mouse)
+    carousel.addEventListener("mousedown", dragStart);
+    carousel.addEventListener("mousemove", dragging);
+    carousel.addEventListener("mouseup", dragStop);
+    carousel.addEventListener("mouseleave", dragStop);
 
-const dragging = (e) => {
-    if(!isDragStart) return;
-    e.preventDefault();
-    isDragging = true;
-    carousel.classList.add("dragging");
-    positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
-    carousel.scrollLeft = prevScrollLeft - positionDiff;
+    // Eventos de toque para dispositivos móveis (touch)
+    carousel.addEventListener("touchstart", startTouch);
+    carousel.addEventListener("touchmove", moveTouch);
+    carousel.addEventListener("touchend", endTouch);
+    carousel.addEventListener("touchcancel", endTouch);
+
+    // Exibe as setas corretamente no início
     showHideIcons();
-}
 
-const dragStop = () => {
-    isDragStart = false;
-    carousel.classList.remove("dragging");
+    // As setas também devem ser funcionais no celular (touch)
+    leftArrow.addEventListener("touchstart", (e) => {
+        e.preventDefault();  // Impede o comportamento padrão de rolagem
+        moveCarousel('left');
+    });
 
-    if(!isDragging) return;
-    isDragging = false
-    autoSlide();
-}
-
-carousel.addEventListener("mousedown", dragStart);
-carousel.addEventListener("touchstart", dragStart);
-
-carousel.addEventListener("mousemove", dragging);
-carousel.addEventListener("touchmove", dragging);
-
-carousel.addEventListener("mouseup", dragStop);
-carousel.addEventListener("mouseleave", dragStop);
-carousel.addEventListener("toucend", dragStop);
+    rightArrow.addEventListener("touchstart", (e) => {
+        e.preventDefault();  // Impede o comportamento padrão de rolagem
+        moveCarousel('right');
+    });
+});
