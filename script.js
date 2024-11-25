@@ -24,10 +24,7 @@ carousels.forEach(carousel => {
     // Função para mover o carrossel com base na direção (esquerda ou direita)
     const moveCarousel = (direction) => {
         let firstImgWidth = firstImg.clientWidth + 14; // Largura da imagem com o espaçamento
-        let visibleImgs = Math.floor(carousel.clientWidth / firstImgWidth); // Número de imagens visíveis no carrossel
-        let pageWidth = firstImgWidth * visibleImgs; // Largura de uma página (conjunto de imagens visíveis)
-
-        carousel.scrollLeft += direction === 'left' ? -pageWidth : pageWidth;
+        carousel.scrollLeft += direction === 'left' ? -firstImgWidth : firstImgWidth;
         setTimeout(() => showHideIcons(), 60); // Atualiza as setas após o clique
     };
 
