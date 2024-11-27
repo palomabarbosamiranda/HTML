@@ -1,0 +1,13 @@
+#quiz {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.quiz h1 {
+    color: #ffffff;
+}
+.quiz h1 span {
+    color: #00D9FF;
+}
