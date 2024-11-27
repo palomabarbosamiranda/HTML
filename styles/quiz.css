@@ -4,10 +4,49 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    margin: 2%;
 }
 .quiz h1 {
     color: #ffffff;
+    margin-bottom: 4%;
 }
 .quiz h1 span {
     color: #00D9FF;
 }
+
+.quiz p {
+    color: #ffffff;
+    margin: 4%;
+}
+
+.quiz a button {
+    background: linear-gradient(45deg, #6a5acd, #1e92ff);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 24px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    outline: none;
+  }
+  
+  /* Efeito ao passar o mouse */
+  .quiz_button:hover {
+    background: linear-gradient(45deg, #5a4cb2, #1b80e0);
+  }
+  
+  /* Efeito ao pressionar */
+  .quiz_button:active {
+    transform: scale(0.95); /* Reduz o tamanho levemente */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Reduz a sombra */
+  }
+  
+  /* Tornar o botão acessível no mobile */
+  .quiz_button:focus {
+    outline: 2px solid #ffffff80; /* Destaque no foco */
+    outline-offset: 4px;
+  }
+  
