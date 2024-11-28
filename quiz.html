@@ -3,16 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quiz de Personalidade</title>
+    <link rel="stylesheet" href="/styles/quiz.css">
 </head>
 <body>
-    <div class="quiz-container">
-        <h1>Qual personagem de Harry Potter você é?</h1>
-        <div id="quiz"></div>
-        <button id="next" style="display:none;">Próxima</button>
-        <button id="submit" style="display:none;">Ver Resultado</button>
-        <div id="result"></div>
+    
+    <div id="start-screen">
+        <h1>Bem-vindo(a) ao quiz de Paradise - Conexão fatal!</h1>
+        <button id="start-btn">Iniciar Quiz</button>
     </div>
+
+    <!-- Quiz -->
+    <div id="quiz" style="display: none;">
+        <!-- Pergunta e opções serão geradas dinamicamente aqui -->
+    </div>
+
+    <!-- Botões de Navegação -->
+    <div id="buttons">
+        <button id="next" style="display: none;">Próxima</button>
+        <button id="submit" style="display: none;">Ver Resultado</button>
+    </div>
+
+    <!-- Resultado -->
+    <div id="result" style="display: none;"></div>
+
     <script src="quiz.js"></script>
 </body>
 </html>
