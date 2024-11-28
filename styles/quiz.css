@@ -173,8 +173,10 @@ img {
 
     #retry-btn {
         font-size: 14px; /* Reduzir o tamanho da fonte dos botões para telas menores */
-        margin-left: 32%;
         padding: 8px 16px; /* Ajustar o tamanho do padding nos botões */
+        display: flex;
+        margin: auto;
+        margin-top: 3%;
     }
 
 
@@ -218,8 +220,10 @@ img {
     #retry-btn {
         
         font-size: 14px; /* Reduzir o tamanho da fonte dos botões para telas menores */
-        margin-left: 18%;
         padding: 8px 16px; /* Ajustar o tamanho do padding nos botões */
+        display: flex;
+        margin: auto;
+        margin-top: 3%;
     }
 
 
