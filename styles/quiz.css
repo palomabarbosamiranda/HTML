@@ -144,3 +144,89 @@ img {
     margin-left: 32%;
 }
 
+@media (max-width: 768px) {
+    body {
+        padding: 20px; /* Maior espaçamento em telas menores */
+    }
+
+    #quiz {
+        width: 90%; /* Usar 90% da largura da tela em dispositivos menores */
+    }
+
+    #quiz h3 {
+        font-size: 1.2rem;
+    }
+
+    label {
+        font-size: 1.0rem;
+    }
+
+    #next {
+        font-size: 14px; /* Reduzir o tamanho da fonte dos botões para telas menores */
+        padding: 8px 16px; /* Ajustar o tamanho do padding nos botões */
+    }
+
+    #submit {
+        font-size: 14px; /* Reduzir o tamanho da fonte dos botões para telas menores */
+        padding: 8px 16px; /* Ajustar o tamanho do padding nos botões */
+    }
+
+    #retry-btn {
+        font-size: 14px; /* Reduzir o tamanho da fonte dos botões para telas menores */
+        margin-left: 32%;
+        padding: 8px 16px; /* Ajustar o tamanho do padding nos botões */
+    }
+
+
+
+    #start-screen h1 {
+        font-size: 20px; /* Reduzir o tamanho do título em dispositivos móveis */
+        align-items: center;
+        display: flex;
+    }
+
+    img {
+        margin-left: 26%;
+    }
+}
+
+@media (max-width: 480px) {
+    #quiz {
+        width: 100%; /* Ocupa toda a largura da tela em dispositivos muito pequenos */
+        padding: 15px; /* Menos padding em telas muito pequenas */
+    }
+
+    #quiz h3 {
+        font-size: 1.2rem;
+    }
+
+    label {
+        font-size: 1.0rem;
+    }
+
+    #next {
+        font-size: 14px; /* Reduzir o tamanho da fonte dos botões para telas menores */
+        padding: 8px 16px; /* Ajustar o tamanho do padding nos botões */
+    }
+
+    #submit {
+        font-size: 14px; /* Reduzir o tamanho da fonte dos botões para telas menores */
+        padding: 8px 16px; /* Ajustar o tamanho do padding nos botões */
+    }
+
+    #retry-btn {
+        
+        font-size: 14px; /* Reduzir o tamanho da fonte dos botões para telas menores */
+        margin-left: 18%;
+        padding: 8px 16px; /* Ajustar o tamanho do padding nos botões */
+    }
+
+
+    #start-screen h1 {
+        font-size: 18px; /* Menor tamanho de texto para dispositivos móveis pequenos */
+    }
+
+    img {
+        margin-left: 10%;
+    }
+}
