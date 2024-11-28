@@ -5,8 +5,6 @@ $(document).ready(function() {
     });
 });
 
-
-
 const carousels = document.querySelectorAll(".carousel");
 
 carousels.forEach(carousel => {
