@@ -1,4 +1,4 @@
-#who {
+#quemsomos {
     margin: 0;
     padding: 0;
     display: flex;
@@ -8,7 +8,7 @@
     flex-direction: column;
 }
 
-#who h2 {
+#quemsomos h2 {
     color: #00D9FF;
     font-size: 1.9rem;
     margin: 0;
@@ -57,7 +57,7 @@
         width: 180px; /* Reduz ligeiramente o tamanho das imagens */
         height: 180px;
     }
-    #who h2 {
+    #quemsomos h2 {
        margin: 0px;
        font-size: 1.5rem;
     }
