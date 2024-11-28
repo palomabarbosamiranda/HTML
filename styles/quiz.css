@@ -227,6 +227,7 @@ img {
     }
 
     img {
-        margin-left: 10%;
+        display: flex;
+        margin-inline: auto;
     }
 }
