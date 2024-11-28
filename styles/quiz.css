@@ -190,7 +190,7 @@ img {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 380px) {
     #quiz {
         width: 100%; /* Ocupa toda a largura da tela em dispositivos muito pequenos */
         padding: 15px; /* Menos padding em telas muito pequenas */

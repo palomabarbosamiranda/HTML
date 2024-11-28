@@ -1,7 +1,12 @@
 header {
     width: 100%;
     padding: 28px 8%;
-   
+    position: sticky;
+        top: 0;
+        background-image: url(../imagens/FUNDO.jpg); 
+        background-repeat: no-repeat;
+        background-size: cover;
+       z-index: 3;
 }
 
 #navbar {
@@ -51,6 +56,16 @@ nav img  {
 }
 
 @media screen and (max-width: 1170px) {
+
+    header {
+        position: sticky;
+        top: 0;
+        background-image: url(../imagens/FUNDO.jpg); 
+        background-repeat: no-repeat;
+        background-size: cover;
+       z-index: 3;
+    }
+
     #nav_list {
         display: none;
     }
