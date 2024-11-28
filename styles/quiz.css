@@ -186,7 +186,8 @@ img {
     }
 
     img {
-        display: block;
+        display: flex;
+        margin: auto;
     }
 }
 
@@ -227,6 +228,7 @@ img {
     }
 
     img {
-        display: block;
+        display: flex;
+        margin: auto;
     }
 }
